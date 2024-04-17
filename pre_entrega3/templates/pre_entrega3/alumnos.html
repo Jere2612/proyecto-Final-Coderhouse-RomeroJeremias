@@ -1,0 +1,25 @@
+{% extends "inicio.html" %}
+{% load static %}
+{% block contenido %}
+
+
+
+<form action="{% url 'alumnos' %}" method="POST">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="exampleInputNombre" class="form-label">Nombre del Alumno:</label>
+    <input type="text" id="nombre" name="nombre" class="input-control" required>
+    <div id="nameHelp" class="form-text">Completa con el nombre del alumno.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputComision" class="form-label">Comision</label>
+    <input type="number" id="comision" name="comision" class="input-control" required>
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Aprobado</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar formulario</button>
+</form>
+
+{% endblock %}

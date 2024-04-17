@@ -1,0 +1,32 @@
+{% extends "inicio.html" %}
+
+{% load static %}
+{% block contenido %}
+
+    <main class="container">
+        <h1 class="text-xl-center title"> Alumnos </h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>nombre</th>
+                    <th>comision</th>
+                </tr>            
+            </thead>
+            <tbody>
+                {% for n in alumnos %}
+                <tr>
+                    <td>{{n.id}}</td>
+                    <td>{{n.nombre}}</td>
+                    <td>{{n.comision}}</td>
+                    {% if request.user.is_authenticated %}
+                        <td><a href="{% url 'eliminar_alumno' n.id %}" class="btn btn-danger btn-sm">BORRAR</a></td>
+                        <td><a href="{% url 'editar_alumno' n.id %}" class="btn btn-warning btn-sm">EDITAR</a></td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+ 
+{% endblock %}

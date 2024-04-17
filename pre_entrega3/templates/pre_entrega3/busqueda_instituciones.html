@@ -1,0 +1,27 @@
+{% extends "inicio.html" %}
+
+{% load static %}
+
+ 
+
+{% block contenido %}  
+
+  
+
+    <h2>Buscar Institucion</h2>
+
+    <form action="{% url 'resultado_instituciones' %}" method="GET">
+
+        <p>Nombre</p>
+
+        <input type="text" name="nombre" id="nombre">
+
+        <button>Buscar</button>
+
+    </form> 
+
+ 
+
+ 
+
+{% endblock %}

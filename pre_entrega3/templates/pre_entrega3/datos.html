@@ -1,0 +1,20 @@
+{% extends "inicio.html" %}
+{% load static %}
+{% block contenido %}
+<div>
+    <h1>Elige que opcion deseas ver en pantalla:</h1>
+    <div>
+        <a class="btn btn-success" href=" {% url 'ver_alumnos' %}">Alumnos</a>
+        <a class="btn btn-success" href=" {% url 'ver_profesores' %}">Profesores</a>
+        <a class="btn btn-success" href=" {% url 'ver_instituciones' %}">instituciones</a>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

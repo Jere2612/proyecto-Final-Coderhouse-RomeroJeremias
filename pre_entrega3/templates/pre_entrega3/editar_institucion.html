@@ -1,0 +1,33 @@
+{% extends "inicio.html" %}
+
+ 
+
+{% load static %}
+
+ 
+
+{% block contenido %}
+
+    <form action="{% url 'editar_institucion' institucion.id %}" method = "POST">
+
+        {% csrf_token %}
+
+        <p>Nombre</p>
+
+        {{mi_formulario.nombre}}
+
+        <p>Ciudad</p>
+
+        {{mi_formulario.ciudad}}
+
+        <p>Telefono</p>
+
+        {{mi_formulario.telefono}}
+
+        <button class="btn btn-primary">Enviar</button>
+
+    </form>
+
+ 
+
+{% endblock %}

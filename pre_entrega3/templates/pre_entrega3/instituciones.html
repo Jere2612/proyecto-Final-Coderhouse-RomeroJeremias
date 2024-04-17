@@ -1,0 +1,28 @@
+{% extends "inicio.html" %}
+{% load static %}
+{% block contenido %}
+
+
+
+<form action="{% url 'instituciones' %}" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputCiudad" class="form-label">Nombre de la Institucion:</label>
+      <input type="text" id="nombre" name="nombre" class="input-control" required>
+      <div id="nameHelp" class="form-text">Completa con el nombre de tu institucion</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputCiudad" class="form-label">Ciudad de la Institucion:</label>
+      <input type="text" id="ciudad" name="ciudad" class="input-control" required>
+      <div id="nameHelp" class="form-text">Completa con la ciudad donde se encuentra tu institucion</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputTelefono" class="form-label">Telefono</label>
+      <input type="number" id="telefono" name="telefono" class="input-control" required>
+    </div>
+    <div class="mb-3 form-check">
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar formulario</button>
+  </form>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "inicio.html" %}
+
+
+{% load static %}
+
+
+{% block contenido %}
+
+    <main class="container">
+
+        <h1 class="text-xl-center title"> instituciones </h1>
+
+        <table class="table">
+
+            <thead>
+
+                <tr>
+
+                    <th>id</th>
+
+                    <th>Nombre</th>
+
+                    <th>Telefono</th>
+                    
+                    <th>Ciudad</th>
+                </tr>            
+
+            </thead>
+
+            <tbody>
+
+                {% for n in instituciones %}
+
+                <tr>
+                    <td>{{n.id}}</td>
+                    <td>{{n.nombre}}</td>
+                    <td>{{n.telefono}}</td>
+                    <td>{{n.ciudad}}</td>
+                    {% if request.user.is_authenticated %}
+                    <td><a href="{% url 'eliminar_institucion' n.id %}" class="btn btn-danger btn-sm">BORRAR</a></td>
+                    <td><a href="{% url 'editar_institucion' n.id %}" class="btn btn-warning btn-sm">EDITAR</a></td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </main>
+ 
+{% endblock %}

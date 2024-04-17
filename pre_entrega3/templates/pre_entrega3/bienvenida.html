@@ -1,0 +1,8 @@
+{% extends "inicio.html" %}
+{% load static %}
+
+{% block contenido %}
+    <h2>{{mensaje}}</h2>
+        <a href="{% url 'editar_perfil' %}" class="btn btn-warning">Editar Perfil</a>
+    </form>
+{% endblock %}

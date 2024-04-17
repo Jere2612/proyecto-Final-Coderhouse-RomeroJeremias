@@ -1,0 +1,35 @@
+{% extends "inicio.html" %}
+
+{% load static %}
+
+ 
+
+{% block contenido %}  
+
+  
+
+    {% if instituciones %}
+
+        <ul>
+
+        {% for institucion in instituciones %}
+
+            <li>Nombre: {{institucion.nombre}}</li>
+
+            <li>Ciudad: {{institucion.ciudad}}</li>
+
+            <li>Telefono: {{institucion.telefono}}</li>
+
+        {% endfor %}
+
+        </ul>
+
+    {% else %}
+
+        <p>No se encontraron instituciones.</p>
+
+    {% endif %}
+
+ 
+
+{% endblock %}
